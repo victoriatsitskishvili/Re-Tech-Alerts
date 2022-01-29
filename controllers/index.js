@@ -1,11 +1,13 @@
+//End points for the application //
+
 const router = require('express').Router();
 
 const apiRoutes = require('./api/');
-const homeRoutes = require('./home-routes.js');
-const dashboardRoutes = require('./landing page-routes.js');
+const homeRoutes = require('./home-routes');
+const landingpageRoutes = require('./landing page-routes');
 
-router.use('/', home-routes);
-router.use('/dashboard', landingpage-routes);
+router.use('/', homeRoutes);
+router.use('/dashboard', landingpageRoutes);
 router.use('/api', apiRoutes);
 
 module.exports = router;

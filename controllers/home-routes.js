@@ -7,8 +7,8 @@ router.get("/", (req, res) => {
   Post.findAll({
     include: [User],
   })
-    .then((dbPostData) => {
-      const posts = dbPostData.map((post) => post.get({ plain: true }));
+    .then((data) => {
+      const posts = data.map((post) => post.get({ plain: true }));
 
       res.render("allposts", { posts });
     })
