@@ -33,7 +33,6 @@ Re-Tech-Alerts is an application where developers can publish their blog posts a
   - Connect-session-sequelize 
   - dotenv package 
   - bcrypt package 
-  - Passport - Express-compatible authentication middleware for Node.js.
 
   
   ## About
