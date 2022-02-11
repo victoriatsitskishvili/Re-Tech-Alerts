@@ -10,6 +10,10 @@ https://github.com/victoriatsitskishvili/Re-Tech-Alerts
   ## Description
 Re-Tech-Alerts is an application where developers can publish their blog posts and comment on other developers’ posts as well.
 
+## SS 
+<img width="1276" alt="Screen Shot 2022-02-10 at 7 33 30 PM" src="https://user-images.githubusercontent.com/89715481/153520116-a04d63ac-f642-4cf7-952b-569b7f449c81.png">
+
+
 ## Table of Contents 
   
   * [Dependencies](#dependencies)
