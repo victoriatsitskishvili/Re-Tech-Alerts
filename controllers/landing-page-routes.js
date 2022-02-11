@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Post } = require('../models/');
+const { Post } = require('../models');
 const withAuth = require('../utility/auth');
 
 
@@ -13,8 +13,8 @@ router.get("/", withAuth, (req, res) => {
       .then(dbPostData => {
         const posts = dbPostData.map((post) => post.get({ plain: true }));
         
-        res.render("all_posts_user", {
-          layout: "dashboard",
+        res.render("adminallposts", {
+          layout: "homepage",
           posts
         });
       })
@@ -27,21 +27,22 @@ router.get("/", withAuth, (req, res) => {
 
   //To get a new post//
   router.get("/new", withAuth, (req, res) => {
-    res.render("new_post", {
-      layout: "dashboard"
+    res.render("newpost", {
+      layout: "homepage"
     });
   });
   
 
   // To edit a post //
   router.get("/edit/:id", withAuth, (req, res) => {
+    console.log('edit');
     Post.findByPk(req.params.id)
       .then(dbPostData => {
         if (dbPostData) {
           const post = dbPostData.get({ plain: true });
           
-          res.render("edit-post", {
-            layout: "dashboard",
+          res.render("editpost", {
+            layout: "homepage",
             post
           });
         } else {

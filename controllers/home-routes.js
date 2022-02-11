@@ -21,7 +21,7 @@ router.get("/", (req, res) => {
 router.get("/post/:id", (req, res) => {
 
     //The findByPk method obtains only a single entry from the table, using the provided primary key.//
-
+console.log('comment');
   Post.findByPk(req.params.id, {
     include: [
       User,
@@ -35,7 +35,7 @@ router.get("/post/:id", (req, res) => {
       if (dbPostData) {
         const post = dbPostData.get({ plain: true });
 
-        res.render("single-post", { post });
+        res.render("singlepost", { post });
       } else {
         res.status(500).end();
       }
@@ -58,13 +58,13 @@ router.get("/login", (req, res) => {
 });
 
 //To get a sign-up//
-router.get("/sign-up", (req, res) => {
+router.get("/signup", (req, res) => {
   if (req.session.loggedIn) {
     res.redirect("/");
     return;
   }
 
-  res.render("sign-up");
+  res.render("signup");
 });
 
 module.exports = router;
